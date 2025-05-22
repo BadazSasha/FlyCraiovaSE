@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlyCraiovaSE", "FlyCraiovaSE.csproj", "{D456E6DE-BFB1-49E2-84EB-7097128A4F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "..\TestProject1\TestProject1.csproj", "{A6782990-CD21-44B8-8715-CF080C53633B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D456E6DE-BFB1-49E2-84EB-7097128A4F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D456E6DE-BFB1-49E2-84EB-7097128A4F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D456E6DE-BFB1-49E2-84EB-7097128A4F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6782990-CD21-44B8-8715-CF080C53633B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6782990-CD21-44B8-8715-CF080C53633B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6782990-CD21-44B8-8715-CF080C53633B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6782990-CD21-44B8-8715-CF080C53633B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

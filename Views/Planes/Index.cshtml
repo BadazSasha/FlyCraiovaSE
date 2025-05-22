@@ -1,0 +1,69 @@
+﻿<!--schimbat tot-->
+
+<style>
+    .plane-card-img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .plane-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .plane-card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
+
+
+@model List<Plane>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Available Airplanes</h2>
+        <a class="btn btn-success" asp-controller="Planes" asp-action="Create">
+            <i class="bi bi-plus-circle"></i> Add a new plane
+        </a>
+    </div>
+
+    <div class="row">
+        @foreach (var plane in Model)
+        {
+            <div class="col-md-4 mb-4 d-flex">
+                <div class="card plane-card shadow-sm w-100">
+                    @if (!string.IsNullOrEmpty(plane.ImageUrl))
+                    {
+                        <img src="@plane.ImageUrl" class="plane-card-img card-img-top" alt="Image of @plane.Name" />
+                    }
+                    else
+                    {
+                        <img src="https://via.placeholder.com/300x200?text=No+Image" class="plane-card-img card-img-top" alt="No image available" />
+                    }
+
+                    <div class="card-body plane-card-body">
+                        <div>
+                            <h5 class="card-title">@plane.Name (@plane.Model)</h5>
+                            <p class="card-text">
+                                <strong>Total Seats:</strong> @plane.NrSeats<br />
+                                <strong>Business:</strong> @plane.NrPremiumSeats<br />
+                                <strong>Economy:</strong> @plane.NrNormalSeats<br />
+                                <strong>Year:</strong> @plane.Manufactured
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-between mt-3">
+                            <a asp-controller="Planes" asp-action="Edit" asp-route-id="@plane.Id" class="btn btn-primary btn-sm">Edit</a>
+                            <a asp-controller="Planes" asp-action="Delete" asp-route-id="@plane.Id" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

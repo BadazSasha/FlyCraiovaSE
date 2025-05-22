@@ -1,0 +1,34 @@
+﻿@model Ticket
+
+
+<div class="container mt-4">
+    <div action="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2>Buy ticket</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="form-group mb-3">
+                            <label asp-for="PassengerName" class="form-label">PassengerName</label>
+                            <input asp-for="PassengerName" class="form-control" action="Enter a name" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="ClassType" class="form-label">ClassType</label>
+                            <input asp-for="ClassType" class="form-control" action="Enter a class" />
+                        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="SeatNumber" class="form-label">SeatNumber</label>
+                            <input asp-for="SeatNumber" class="form-control" action="Enter a seat" />
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Buy</button>
+                            <a asp-controller="Tickets" asp-action="Index" class="btn btn-danger">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿@model List<Ticket>
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <a class="btn btn-secondary" asp-controller="Tickets" asp-action="Create">
+                Add new ticket
+            </a>
+        </div>
+        <div class="col-6 text-end">
+            <h2>Tickets history</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>PassangerName</th>
+                <th>ClassType</th>
+                <th>SeatNumber</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var entry in Model)
+            {
+                <tr>
+                    <td>@entry.PassengerName</td>
+                    <td>@entry.ClassType</td>
+                    <td>@entry.SeatNumber</td>
+                    <td>
+                        <a asp-controller="Tickets" asp-action="Delete" asp-route-id="@entry.Id" class="btn btn-danger btn-sm">
+                            Cancel
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+</div>
